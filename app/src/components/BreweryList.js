@@ -12,14 +12,14 @@ const BreweryList = props => {
                 <div>
                     <button onClick={() => props.fetchData()}>Find Refreshments</button>
                     {props.error && (
-                        <div>Error finding refreshments</div>
+                        <div className='error-message'>Error finding refreshments</div>
                     )}
                     <div className='brewery-list-container'>
                         <BreweryCard name={props.breweryName} type={props.breweryType} city={props.breweryCity} state={props.breweryState} phone={props.breweryPhone}/>
                     </div>
                 </div>
             )
-            )}
+            })
         </div>
     )
 }
