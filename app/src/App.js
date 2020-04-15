@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import { Header } from './components/Styles';
 
 import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
@@ -15,11 +16,11 @@ const store = createStore(reducer, applyMiddleware(thunk));
 export default function App() {
   return (
     <Provider store={store}>  
-      <div className="App">
+      <Header className="App">
         <h1>Northwest Breweries</h1>
         <h3>Find your next stop</h3>
         <BreweryList />
-      </div>
+      </Header>
     </Provider>
   );
 }

@@ -35,22 +35,36 @@ accent color: ##6D243A or #E5E500 */
 //Global Styles ----------------------
 
 
-export const MainBody = styled.div`
-    /* width: 300px; */
-    background-color: #1E0E0C;
-`;
 
 
 //Header Styles ----------------------
 
 
 export const Header = styled.header`
-    align-content: center;
-    background-color: #6E2B12;
+    padding: 15px;
+    margin-bottom: 40px;
+    background-color: #4A4138;
     border: 2px solid #EAE741;
     border-radius: 7.5px;
     box-shadow: 5px 10px #1E0E0C;
     color: #F26A37;
+    text-shadow: 2px 2px #1E0E0C;
+`;
+
+export const FindBreweriesBtn = styled.button`
+    text-decoration: none;
+    font-family: 'Inria Sans', sans-serif;
+    color: white;
+    width: 120px;
+    height: 50px;
+    background-color: #6D243A;
+    border: 2px solid #EAE741;
+    border-radius: 10px;
+    box-shadow: 3px 4px #1E0E0C;
+
+    :hover {
+        background-color: maroon;
+    }
 `;
 
 
@@ -58,22 +72,28 @@ export const Header = styled.header`
 
 
 export const BreweryListContainer = styled.div`
-    align-content: center;
-    width: 250px;
+    margin: 0 auto;
+    margin-top: 40px;
+    width: 275px;
+    text-shadow: none;
 `;
 
 export const BreweryCardContainer = styled.div`
-    background-color: #D52027;
+    padding: 10px;
+    margin: 10px;
+    background-color: #804004;
     border: 2px solid #EAE741,
-    border-radius: 5px;
+    border-radius: 10px;
     box-shadow: 2.5px 5px #1E0E0C;
     color: #1E0E0C;
 `;
 
-export const CardLeft = styled.div`
-    align-content: left;
+export const CardTitle = styled.h2`
+    text-decoration: underline;
 `;
 
-export const CardRight = styled.div`
-    align-content: center;
+export const CardParagraph = styled.p`
+    color: #EAE741;
+    font-size: .75em;
+    font-style: italic;
 `;

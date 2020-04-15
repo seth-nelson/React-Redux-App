@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { getData } from '../actions/index';
 import BreweryCard from './BreweryCard';
 
-// import { MainBody } from './Styles';
+import { FindBreweriesBtn, Header, BreweryListContainer, BreweryCardContainer } from './Styles';
 
 
 const BreweryList = props => {
@@ -14,17 +14,19 @@ const BreweryList = props => {
                 <h4>Finding beer...</h4>
             ) : (
                 <div>
-                    <button onClick={() => props.getData()}>Find Refreshments</button>
+                    <FindBreweriesBtn onClick={() => props.getData()}>Find Refreshments</FindBreweriesBtn>
                     {props.error && (
                         <div className='error-message'>Error finding refreshments</div>
                     )}
-                    {props.breweries.map(places => {
-                        return (
-                            <div className='brewery-list-container'>
-                                <BreweryCard key={places.breweryId} name={places.breweryName} type={places.breweryType} street={places.breweryStreet} city={places.breweryCity} state={places.breweryState} zip={places.breweryZip} phone={places.breweryPhone}/>
-                            </div>
-                        );
-                    })}
+                    <div>
+                        {props.breweries.map(places => {
+                            return (
+                                <BreweryListContainer className='brewery-list-container'>
+                                    <BreweryCard key={places.breweryId} name={places.breweryName} type={places.breweryType} street={places.breweryStreet} city={places.breweryCity} state={places.breweryState} zip={places.breweryZip} phone={places.breweryPhone}/>
+                                </BreweryListContainer>
+                            );
+                        })}
+                    </div>
                 </div>
             )
             }

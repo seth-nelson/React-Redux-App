@@ -1,20 +1,21 @@
 import React from 'react';
+import { CardTitle, BreweryCardContainer, CardParagraph } from './Styles';
 
 
 const BreweryCard = props => {
         return (
-            <div className='brewery-card-container'>
+            <BreweryCardContainer id='brewery-card-container'>
                 <div className='name-and-type'>
-                    <h2>{props.name}</h2>
+                    <CardTitle>{props.name}</CardTitle>
                     <h4>{props.type}</h4>
                 </div>
                 <div className='location-info'>
-                    <p>{props.street}</p>
-                    <p>{props.city}, {props.state} {props.zip}</p>
-                    <p>P:  {props.phone}</p>
+                    <CardParagraph>{props.street}</CardParagraph>
+                    <CardParagraph>{props.city}, {props.state} {props.zip}</CardParagraph>
+                    <CardParagraph>P:  {props.phone}</CardParagraph>
                 </div>
                 
-            </div>
+            </BreweryCardContainer>
         )
 }
 
