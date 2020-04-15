@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 import { getData } from '../actions/index';
 import BreweryCard from './BreweryCard';
 
+// import { MainBody } from './Styles';
+
 
 const BreweryList = props => {
     console.log('breweryList props', props);
