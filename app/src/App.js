@@ -16,8 +16,8 @@ export default function App() {
   return (
     <Provider store={store}>  
       <div className="App">
-        <h1>Breweries</h1>
-        <h3>Finding your next stop</h3>
+        <h1>Northwest Breweries</h1>
+        <h3>Find your next stop</h3>
         <BreweryList />
       </div>
     </Provider>

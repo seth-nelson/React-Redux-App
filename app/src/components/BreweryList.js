@@ -5,7 +5,7 @@ import BreweryCard from './BreweryCard';
 
 
 const BreweryList = props => {
-    console.log(props);
+    console.log('breweryList props', props);
     return (
         <div className='main-container'>
             {props.isLoading ? (
@@ -16,14 +16,18 @@ const BreweryList = props => {
                     {props.error && (
                         <div className='error-message'>Error finding refreshments</div>
                     )}
-                    <div className='brewery-list-container'>
-                        <BreweryCard name={props.breweryName} type={props.breweryType} city={props.breweryCity} state={props.breweryState} phone={props.breweryPhone}/>
-                    </div>
+                    {props.breweries.map(places => {
+                        return (
+                            <div className='brewery-list-container'>
+                                <BreweryCard key={places.breweryId} name={places.breweryName} type={places.breweryType} street={places.breweryStreet} city={places.breweryCity} state={places.breweryState} zip={places.breweryZip} phone={places.breweryPhone}/>
+                            </div>
+                        );
+                    })}
                 </div>
             )
-            })
+            }
         </div>
-    )
+    );
 }
 
 const mapStateToProps = state => {
@@ -33,6 +37,7 @@ const mapStateToProps = state => {
         error: state.error
     };
 };
+
 
 export default connect(
     mapStateToProps,

@@ -16,10 +16,13 @@ export const getData = (stateName = 'washington') => {
                     console.log('data pull from API', result);
                     const breweries = result.data.map(place => {
                         return {
+                            breweryId: place.id,
                             breweryName: place.name,
                             breweryType: place.brewery_type,
+                            breweryStreet: place.street,
                             breweryCity: place.city,
                             breweryState: place.state,
+                            breweryZip: place.postal_code,
                             breweryPhone: place.phone
                         };
                     });
@@ -30,6 +33,6 @@ export const getData = (stateName = 'washington') => {
                     console.log('data error', error);
                     dispatch({ type: DATA_ERROR, payload: error});
                 });
-        }, 1500);
+        }, 1000);
     };
 };
