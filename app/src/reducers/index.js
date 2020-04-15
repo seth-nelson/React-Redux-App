@@ -1,8 +1,9 @@
-
+import { GET_DATA, DATA_SUCCESS, DATA_ERROR } from '../actions/index';
 
 export const initialState = {
     breweries: [],
-    isLoading: false
+    isLoading: false,
+    error: ''
 };
 
 

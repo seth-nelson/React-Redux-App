@@ -13,17 +13,18 @@ export const getData = (stateName = 'washington') => {
             axios
                 .get(`https://api.openbrewerydb.org/breweries?by_state=${stateName}`)
                 .then(result => {
-                    console.log(result);
+                    console.log('data pull from API', result);
                     const breweries = result.data.map(place => {
                         return {
                             breweryName: place.name,
-                            breweryType: place.breweryType,
+                            breweryType: place.brewery_type,
                             breweryCity: place.city,
-                            breweryState: place.stateName,
+                            breweryState: place.state,
                             breweryPhone: place.phone
                         };
                     });
                     dispatch ({ type: DATA_SUCCESS, payload: breweries });
+                    console.log('data pull successful', breweries);
                 })
                 .catch(error => {
                     console.log('data error', error);

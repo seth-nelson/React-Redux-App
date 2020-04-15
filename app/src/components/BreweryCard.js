@@ -2,7 +2,7 @@ import React from 'react';
 
 
 const BreweryCard = props => {
-    {props.breweries.map(place => {
+    // {props.breweries.map(place => {
         return (
             <div className='brewery-card-container'>
                 <div className='name-and-type'>
@@ -17,7 +17,7 @@ const BreweryCard = props => {
                 
             </div>
         )
-    })}
+    // })}
 }
 
 

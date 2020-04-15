@@ -9,7 +9,7 @@ import BreweryList from './components/BreweryList';
 import { reducer } from './reducers/index';
 
 
-const store = createStore(reducer, applyMiddleWare(thunk));
+const store = createStore(reducer, applyMiddleware(thunk));
 
 
 export default function App() {

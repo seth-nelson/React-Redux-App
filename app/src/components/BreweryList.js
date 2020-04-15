@@ -1,16 +1,18 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { fetchData } from '../actions/index';
+import { getData } from '../actions/index';
+import BreweryCard from './BreweryCard';
 
 
 const BreweryList = props => {
+    console.log(props);
     return (
         <div className='main-container'>
             {props.isLoading ? (
                 <h4>Finding beer...</h4>
             ) : (
                 <div>
-                    <button onClick={() => props.fetchData()}>Find Refreshments</button>
+                    <button onClick={() => props.getData()}>Find Refreshments</button>
                     {props.error && (
                         <div className='error-message'>Error finding refreshments</div>
                     )}
@@ -24,5 +26,15 @@ const BreweryList = props => {
     )
 }
 
+const mapStateToProps = state => {
+    return {
+        breweries: state.breweries,
+        isLoading: state.isLoading,
+        error: state.error
+    };
+};
 
-export default BreweryList;
+export default connect(
+    mapStateToProps,
+    { getData }
+)(BreweryList);
