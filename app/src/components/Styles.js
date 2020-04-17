@@ -82,7 +82,7 @@ export const BreweryCardContainer = styled.div`
     padding: 10px;
     margin: 10px;
     background-color: #804004;
-    border: 2px solid #EAE741,
+    border: 2px solid #EAE741;
     border-radius: 10px;
     box-shadow: 2.5px 5px #1E0E0C;
     color: #1E0E0C;

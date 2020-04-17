@@ -9,7 +9,7 @@ export const getData = (stateName = 'washington') => {
         dispatch({
             type: GET_DATA
         });
-        setTimeout(() => {
+        // setTimeout(() => {
             axios
                 .get(`https://api.openbrewerydb.org/breweries?by_state=${stateName}`)
                 .then(result => {
@@ -33,6 +33,6 @@ export const getData = (stateName = 'washington') => {
                     console.log('data error', error);
                     dispatch({ type: DATA_ERROR, payload: error});
                 });
-        }, 1000);
+        // }, 1000);
     };
 };

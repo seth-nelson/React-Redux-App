@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { getData } from '../actions/index';
 import BreweryCard from './BreweryCard';
 
-import { FindBreweriesBtn, Header, BreweryListContainer, BreweryCardContainer } from './Styles';
+import { FindBreweriesBtn, BreweryListContainer, } from './Styles';
 
 
 const BreweryList = props => {
